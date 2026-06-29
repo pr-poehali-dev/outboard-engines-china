@@ -230,6 +230,67 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Featured models */}
+      <section className="py-24 bg-secondary/30">
+        <div className="container">
+          <div className="max-w-2xl mb-12">
+            <Badge className="mb-3 bg-accent text-accent-foreground font-display tracking-wider">ХИТЫ ПРОДАЖ</Badge>
+            <h2 className="font-display font-bold text-4xl md:text-5xl mb-4">Топ-2 мотора по цене сезона</h2>
+            <p className="text-muted-foreground text-lg">Самые популярные модели у рыбаков Приморья. Цены действуют до конца месяца.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                name: 'HIDEA 200',
+                tag: 'Для больших катеров',
+                old: 1090000,
+                price: 879000,
+                power: 200,
+                stroke: '4-тактный',
+                specs: ['200 л.с.', 'Впрыск EFI', 'Гидроподъём', 'Электростартер'],
+              },
+              {
+                name: 'Huachai Power 110',
+                tag: 'Универсал для лодки ПВХ',
+                old: 690000,
+                price: 519000,
+                power: 110,
+                stroke: '4-тактный',
+                specs: ['110 л.с.', 'Дистанция RC', 'Зарядка 12V', 'Тихий ход'],
+              },
+            ].map((m) => {
+              const off = Math.round((1 - m.price / m.old) * 100);
+              return (
+                <Card key={m.name} className="group overflow-hidden bg-card border-border hover:border-accent/60 transition-all">
+                  <div className="relative aspect-[16/10] bg-secondary overflow-hidden">
+                    <img src={HERO_IMG} alt={m.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <Badge className="absolute top-4 left-4 bg-accent text-accent-foreground font-display text-base">−{off}%</Badge>
+                  </div>
+                  <div className="p-6">
+                    <div className="text-sm text-muted-foreground mb-1">{m.tag}</div>
+                    <h3 className="font-display font-bold text-2xl mb-4">{m.name}</h3>
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {m.specs.map((s) => (
+                        <span key={s} className="text-xs px-3 py-1 rounded-full bg-secondary text-muted-foreground">{s}</span>
+                      ))}
+                    </div>
+                    <div className="flex items-end justify-between">
+                      <div>
+                        <div className="text-muted-foreground line-through text-base">{fmt(m.old)}</div>
+                        <div className="font-display font-bold text-3xl text-accent">{fmt(m.price)}</div>
+                      </div>
+                      <Button size="lg" onClick={() => scrollTo('contacts')} className="font-display tracking-wide bg-accent text-accent-foreground hover:bg-accent/90">
+                        Забрать цену
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* Catalog */}
       <section id="catalog" className="py-24">
         <div className="container">
