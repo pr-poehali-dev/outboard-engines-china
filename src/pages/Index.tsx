@@ -291,6 +291,57 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Reviews & Stats */}
+      <section className="py-24">
+        <div className="container">
+          <div className="max-w-2xl mb-12">
+            <Badge variant="outline" className="mb-3 border-primary/40 text-primary font-display tracking-wider">НАМ ДОВЕРЯЮТ</Badge>
+            <h2 className="font-display font-bold text-4xl md:text-5xl mb-4">Рыбаки Приморья уже с нами</h2>
+            <p className="text-muted-foreground text-lg">Реальные отзывы тех, кто уже вышел на воду с нашим мотором.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              { name: 'Сергей В.', city: 'Владивосток', text: 'Брал HIDEA на катер вместо старой Ямахи. По тяге не уступает, а сэкономил почти 400 тысяч. Документы для ГИМС дали сразу.' },
+              { name: 'Андрей К.', city: 'Находка', text: 'Боялся китайца, но забрал со склада в городе — посмотрел вживую. Сезон отходил на ПВХ, ноль нареканий. Запчасти есть в наличии.' },
+              { name: 'Дмитрий Л.', city: 'Артём', text: 'Помогли подобрать мотор под мою лодку, не впарили лишнего. Доставили за два дня. Ребята реально в теме рыбалки.' },
+            ].map((r) => (
+              <Card key={r.name} className="p-6 bg-card border-border">
+                <div className="flex gap-1 mb-4 text-accent">
+                  {Array.from({ length: 5 }).map((_, i) => <Icon key={i} name="Star" size={16} className="fill-accent" />)}
+                </div>
+                <p className="text-muted-foreground mb-5">«{r.text}»</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center font-display font-bold text-primary">
+                    {r.name[0]}
+                  </div>
+                  <div>
+                    <div className="font-display font-semibold">{r.name}</div>
+                    <div className="text-xs text-muted-foreground flex items-center gap-1">
+                      <Icon name="MapPin" size={12} />{r.city}
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-border bg-border">
+            {[
+              { v: '120+', l: 'моторов продано за сезон' },
+              { v: '3 года', l: 'на рынке Приморья' },
+              { v: '4.9', l: 'средняя оценка клиентов' },
+              { v: '2 дня', l: 'средний срок доставки' },
+            ].map((s) => (
+              <div key={s.l} className="bg-card p-7 text-center">
+                <div className="font-display font-bold text-4xl text-primary mb-1">{s.v}</div>
+                <div className="text-sm text-muted-foreground">{s.l}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Catalog */}
       <section id="catalog" className="py-24">
         <div className="container">
