@@ -143,6 +143,33 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Pains */}
+      <section className="py-24 bg-secondary/30">
+        <div className="container">
+          <div className="max-w-2xl mb-12">
+            <Badge variant="outline" className="mb-3 border-accent/40 text-accent font-display tracking-wider">ЗНАКОМО?</Badge>
+            <h2 className="font-display font-bold text-4xl md:text-5xl mb-4">Боль каждого рыбака с Приморья</h2>
+            <p className="text-muted-foreground text-lg">Мы знаем, через что вы проходите при выборе мотора. И решили каждую из этих проблем.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { icon: 'BadgeRussianRuble', t: 'Японец стоит как авто', d: 'Новый Yamaha или Suzuki влетает в полмиллиона. Откладывать на него можно годами.' },
+              { icon: 'Dices', t: 'Б/у — это лотерея', d: 'Берёшь с рук «убитый» мотор, а через месяц капремонт дороже самой покупки.' },
+              { icon: 'MapPinOff', t: 'Москва далеко', d: 'Нормальные магазины за тысячи километров, а доставка и сроки убивают всё желание.' },
+              { icon: 'CircleHelp', t: 'Не знаю, что выбрать', d: 'Двухтактный или четырёхтактный? Какая мощность под мою лодку? Голова кругом.' },
+            ].map((c) => (
+              <Card key={c.t} className="p-6 bg-card border-border hover:border-accent/50 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-4">
+                  <Icon name={c.icon} size={24} className="text-accent" fallback="CircleAlert" />
+                </div>
+                <h3 className="font-display font-semibold text-lg mb-2">{c.t}</h3>
+                <p className="text-muted-foreground text-sm">{c.d}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Catalog */}
       <section id="catalog" className="py-24">
         <div className="container">
