@@ -430,6 +430,33 @@ const Index = () => {
         </div>
       </section>
 
+      {/* CTA — Action */}
+      <section className="py-24">
+        <div className="container">
+          <div className="rounded-3xl border border-accent/30 bg-card mesh-bg p-8 md:p-14 text-center relative overflow-hidden">
+            <div className="absolute inset-0 grid-bg opacity-20" />
+            <div className="relative max-w-xl mx-auto">
+              <Badge className="mb-5 bg-accent text-accent-foreground font-display tracking-wider">БЕСПЛАТНЫЙ ПОДБОР</Badge>
+              <h2 className="font-display font-bold text-4xl md:text-5xl mb-4">Подберём мотор за 5 минут</h2>
+              <p className="text-muted-foreground text-lg mb-8">Оставьте контакты — перезвоним, зададим пару вопросов про вашу лодку и предложим лучший вариант под бюджет.</p>
+              <form className="space-y-4 text-left">
+                <input placeholder="Как вас зовут?" className="w-full h-12 px-4 rounded-lg bg-secondary border border-border focus:border-accent outline-none transition-colors" />
+                <input placeholder="Телефон для связи" className="w-full h-12 px-4 rounded-lg bg-secondary border border-border focus:border-accent outline-none transition-colors" />
+                <input placeholder="Город (для расчёта доставки)" className="w-full h-12 px-4 rounded-lg bg-secondary border border-border focus:border-accent outline-none transition-colors" />
+                <Button size="lg" className="w-full h-14 font-display tracking-wide text-lg bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/30">
+                  <Icon name="Send" size={20} className="mr-2" />Получить подбор бесплатно
+                </Button>
+              </form>
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1.5"><Icon name="ShieldOff" size={16} className="text-primary" />Без спама и звонков роботов</span>
+                <span className="flex items-center gap-1.5"><Icon name="Lock" size={16} className="text-primary" />Не передаём данные третьим лицам</span>
+                <span className="flex items-center gap-1.5"><Icon name="PhoneOff" size={16} className="text-primary" />Не дозвонимся — не беспокоим</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Warranty */}
       <section id="warranty" className="py-24 bg-secondary/30">
         <div className="container">
