@@ -170,6 +170,66 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Solution — Bento */}
+      <section className="py-24">
+        <div className="container">
+          <div className="max-w-2xl mb-12">
+            <Badge variant="outline" className="mb-3 border-primary/40 text-primary font-display tracking-wider">РЕШЕНИЕ</Badge>
+            <h2 className="font-display font-bold text-4xl md:text-5xl mb-4">Как мы закрываем эти боли</h2>
+            <p className="text-muted-foreground text-lg">Четыре причины, почему рыбаки Приморья берут моторы у нас.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2 gap-5">
+            {/* Big card */}
+            <Card className="md:col-span-2 lg:row-span-2 p-8 bg-card border-border mesh-bg relative overflow-hidden flex flex-col justify-between min-h-[280px]">
+              <div className="absolute inset-0 grid-bg opacity-20" />
+              <div className="relative">
+                <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mb-5">
+                  <Icon name="Container" size={28} className="text-primary-foreground" />
+                </div>
+                <h3 className="font-display font-bold text-3xl mb-3">Прямые поставки без посредников</h3>
+                <p className="text-muted-foreground max-w-md">Возим моторы напрямую с заводов Китая. Никаких наценок перекупов — поэтому цена в 2–3 раза ниже японских аналогов при том же ресурсе.</p>
+              </div>
+              <div className="relative flex gap-6 mt-6">
+                <div>
+                  <div className="font-display font-bold text-3xl text-primary">−60%</div>
+                  <div className="text-xs text-muted-foreground">к цене японца</div>
+                </div>
+                <div>
+                  <div className="font-display font-bold text-3xl text-primary">0</div>
+                  <div className="text-xs text-muted-foreground">посредников</div>
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-6 bg-card border-border hover:border-primary/50 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-4">
+                <Icon name="Warehouse" size={24} className="text-primary" />
+              </div>
+              <h3 className="font-display font-semibold text-lg mb-2">Склад в вашем городе</h3>
+              <p className="text-muted-foreground text-sm">Моторы в наличии рядом — приезжайте, смотрите, забирайте. Никакой Москвы за тысячи км.</p>
+            </Card>
+
+            <Card className="p-6 bg-card border-border hover:border-primary/50 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center mb-4">
+                <Icon name="FileCheck" size={24} className="text-primary" />
+              </div>
+              <h3 className="font-display font-semibold text-lg mb-2">Белые документы для ГИМС</h3>
+              <p className="text-muted-foreground text-sm">Полный пакет документов для регистрации. Ставите на учёт без проблем и нервов.</p>
+            </Card>
+
+            <Card className="md:col-span-2 p-6 bg-card border-border hover:border-primary/50 transition-colors flex items-center gap-5">
+              <div className="w-14 h-14 shrink-0 rounded-2xl bg-primary/15 flex items-center justify-center">
+                <Icon name="Wrench" size={26} className="text-primary" />
+              </div>
+              <div>
+                <h3 className="font-display font-semibold text-lg mb-1">Гарантия и запчасти всегда в наличии</h3>
+                <p className="text-muted-foreground text-sm">До 3 лет официальной гарантии и собственный склад запчастей — не остаётесь один на один с поломкой.</p>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Catalog */}
       <section id="catalog" className="py-24">
         <div className="container">
