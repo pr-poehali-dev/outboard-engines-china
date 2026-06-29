@@ -100,18 +100,32 @@ const Index = () => {
           <div className="animate-fade-in">
             <Badge className="mb-5 bg-accent text-accent-foreground font-display tracking-wider">ПРЯМЫЕ ПОСТАВКИ ИЗ КИТАЯ</Badge>
             <h1 className="font-display font-bold text-5xl md:text-7xl leading-[0.95] mb-6">
-              МОЩНОСТЬ<br />ДЛЯ ВАШЕЙ<br /><span className="text-primary text-glow">ВОДНОЙ СТИХИИ</span>
+              ЯПОНСКИЕ<br /><span className="text-primary text-glow">МОЩНОСТИ</span> —<br />КИТАЙСКАЯ <span className="text-accent">ЦЕНА</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-md mb-8">
-              Подвесные лодочные моторы напрямую от производителей. Гарантия до 3 лет, доставка по всей России.
+              Подвесные лодочные моторы с ресурсом мировых брендов по цене в 2–3 раза ниже. Гарантия до 3 лет, доставка по всей России.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" onClick={() => scrollTo('catalog')} className="font-display tracking-wide text-base">
-                <Icon name="Search" size={18} className="mr-2" />Смотреть каталог
+              <Button size="lg" onClick={() => scrollTo('catalog')} className="font-display tracking-wide text-base bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/30">
+                <Icon name="Search" size={18} className="mr-2" />Подобрать мотор
               </Button>
               <Button size="lg" variant="outline" onClick={() => scrollTo('about')} className="font-display tracking-wide text-base border-primary/40">
                 О компании
               </Button>
+            </div>
+            <div className="flex flex-wrap gap-5 mt-8">
+              {[
+                { icon: 'ShieldCheck', t: 'Гарантия 3 года' },
+                { icon: 'Truck', t: 'Доставка по РФ' },
+                { icon: 'Wrench', t: 'Сервис и запчасти' },
+              ].map((c) => (
+                <div key={c.t} className="flex items-center gap-2">
+                  <div className="w-9 h-9 rounded-lg bg-primary/15 flex items-center justify-center">
+                    <Icon name={c.icon} size={18} className="text-primary" />
+                  </div>
+                  <span className="text-sm font-medium">{c.t}</span>
+                </div>
+              ))}
             </div>
             <div className="flex gap-8 mt-12">
               {[['500+', 'моторов на складе'], ['12', 'лет на рынке'], ['3 года', 'гарантии']].map(([v, l]) => (
